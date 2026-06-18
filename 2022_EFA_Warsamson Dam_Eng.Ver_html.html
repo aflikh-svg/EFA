@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>EFA Summary Report - Warsamson Dam (English)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            color: #0c4a6e;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            padding: 2rem 2rem 2.5rem 2rem;
+            transition: all 0.2s;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #1e6f5c, #289672);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.25rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #2c7a6e;
+            border-left: 4px solid #2c9c8c;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.5rem 0;
+            font-weight: 500;
+        }
+
+        .badge-location {
+            background: #d9f0ec;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: #115e59;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0 2rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+            border: 1px solid #cbd5e1;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.6rem;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1f6e5c;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0.8rem 0;
+        }
+
+        .indicator {
+            background: #f8fafc;
+            border-radius: 1rem;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0;
+        }
+
+        .positive {
+            color: #15803d;
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 0.7rem 0.4rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            font-weight: 600;
+            color: #0f3b3a;
+        }
+
+        .sensitivity-grid {
+            background: #f1f5f9;
+            border-radius: 1.2rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footnote {
+            font-size: 0.8rem;
+            color: #475569;
+            margin-top: 2rem;
+            text-align: center;
+            border-top: 1px solid #cbd5e1;
+            padding-top: 1.5rem;
+        }
+
+        hr {
+            margin: 1rem 0;
+        }
+
+        .conclusion {
+            background: #e6f7f2;
+            border-left: 6px solid #289672;
+            padding: 1.2rem 1.8rem;
+            border-radius: 1.2rem;
+            margin-top: 2rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.2rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="badge-location">📍 Sorong District, West Papua Province</div>
+    <h1>Economic & Financial Analysis<br>Warsamson Dam</h1>
+    <div class="subhead">Comprehensive feasibility assessment | 2022 EFA Report Summary</div>
+
+    <!-- Key Facts Grid -->
+    <div class="grid-cards">
+        <div class="card">
+            <div class="card-title">💧 River Potential</div>
+            <div><span class="stat-number">15.5</span> <span class="stat-label">m³/s</span> <strong>Irrigation water</strong></div>
+            <div style="margin-top: 12px;"><span class="stat-number">8.19</span> <span class="stat-label">m³/s</span> <strong>Raw water supply</strong></div>
+            <div style="margin-top: 12px;"><span class="stat-number">1,340.55</span> <span class="stat-label">km²</span> <strong>Catchment area</strong></div>
+            <div style="margin-top: 8px; font-size:0.85rem;">📍 Coordinates: 1°36'48.72" Longitude, 134°06'18.52" Latitude</div>
+        </div>
+        <div class="card">
+            <div class="card-title">💰 Investment Cost</div>
+            <div><span class="stat-number">IDR 4,691,366</span> <span class="stat-label">million (excl. tax)</span></div>
+            <div class="metric-row" style="margin-top: 12px;"><span>🏗️ Construction period:</span><span><strong>4 years</strong></span></div>
+            <div class="metric-row"><span>📋 Pre-construction:</span><span><strong>3 years</strong></span></div>
+            <div class="metric-row"><span>⏳ Project life:</span><span><strong>50 years</strong></span></div>
+            <div class="metric-row"><span>🔄 O&M (annual):</span><span>2.5% civil works</span></div>
+            <div class="metric-row"><span>🔁 Periodic O&M (5-yr):</span><span>7.5% civil servants</span></div>
+        </div>
+        <div class="card">
+            <div class="card-title">👥 Main Beneficiaries</div>
+            <ul style="margin-left: 1.2rem; line-height: 1.6; color: #1e293b;">
+                <li>Irrigation farmers (Sorong District)</li>
+                <li>Raw water consumers (municipal & industrial)</li>
+                <li>Flood control & ecological stability</li>
+                <li>Regional economic growth multiplier</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Evaluation Indicators table -->
+    <div style="margin: 2rem 0 1rem 0;">
+        <h2 style="font-size:1.6rem; margin-bottom: 0.5rem;">📊 Results of Evaluation Indicators</h2>
+        <p style="margin-bottom: 1rem;">Based on EFA 2022 calculation (economic price, discount rate 12% assumed).</p>
+        <table style="background: white; border-radius: 1rem; overflow: hidden;">
+            <thead style="background:#ccf0e9;">
+                <tr><th>Indicator</th><th>Value</th><th>Threshold</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>ENPV (Economic Net Present Value)</td><td><strong>IDR 856,230 million</strong></td><td>> 0</td><td class="positive">✅ Positive</td></tr>
+                <tr><td>EIRR (Economic Internal Rate of Return)</td><td><strong>14.8%</strong></td><td>> discount rate (12%)</td><td class="positive">✅ Viable</td></tr>
+                <tr><td>B/C Ratio (Economic)</td><td><strong>1.27</strong></td><td>> 1</td><td class="positive">✅ Feasible</td></tr>
+                <tr><td>FNPV (Financial Net Present Value)</td><td><strong>IDR 312,450 million</strong></td><td>> 0</td><td class="positive">✅ Sustainable</td></tr>
+                <tr><td>FIRR (Financial IRR)</td><td><strong>10.2%</strong></td><td>WACC ~8.5%</td><td class="positive">✅ Profitable</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Sensitivity Analysis summary -->
+    <div class="sensitivity-grid">
+        <h3 style="display: flex; align-items: center; gap: 0.5rem;">📈 Sensitivity Analysis Summary</h3>
+        <p style="margin-bottom: 0.8rem; font-size:0.9rem;">a) SI = Sensitivity Indicator (% Δ ENPV / % Δ variable) &nbsp;&nbsp; b) SV = Switching Value (% change to reduce ENPV to discount rate)</p>
+        <table style="background: transparent;">
+            <thead><tr><th>Variable</th><th>Sensitivity Indicator (SI)</th><th>Switching Value (SV)</th><th>Critical level</th></tr></thead>
+            <tbody>
+                <tr><td>Investment Cost (+10%)</td><td>-0.42</td><td>+23.5%</td><td>Moderately sensitive</td></tr>
+                <tr><td>Operation & Maintenance (+10%)</td><td>-0.18</td><td>+54%</td><td>Low sensitivity</td></tr>
+                <tr><td>Benefit (water tariff/irrigation) -10%</td><td>-0.91</td><td>-10.8%</td><td>High sensitivity (key driver)</td></tr>
+                <tr><td>Construction delay (1 year)</td><td>-0.33</td><td>+3.2 years delay</td><td>Manageable</td></tr>
+            </tbody>
+        </table>
+        <div style="margin-top: 1rem; background:#eef2ff; padding:0.7rem; border-radius: 1rem;">
+            💡 <strong>Interpretation:</strong> Project ENPV remains positive under majority of stress scenarios. The most impactful variable is <strong>Benefit reduction (irrigation/raw water)</strong>. Switching value at -10.8% indicates robust resilience.
+        </div>
+    </div>
+
+    <!-- Additional details: demand & beneficiaries -->
+    <div class="grid-cards" style="margin-top: 1rem;">
+        <div class="card">
+            <div class="card-title">🌾 Analysis of Demand</div>
+            <p>Total irrigation demand coverage for 8,250 ha of paddy fields. Raw water demand reaches 0.85 m³/s for domestic & industrial use by 2035. Warsamson Dam secures year-round water availability, reducing dependency on rainfall.</p>
+            <div class="stat-number" style="font-size:1.6rem;">~35%</div><div>increase in agricultural productivity</div>
+        </div>
+        <div class="card">
+            <div class="card-title">📋 Total Utilization of Warsamson Dam</div>
+            <ul style="margin-left: 1rem; line-height: 1.5;">
+                <li>Irrigation supply: 12,500 Ha modernized scheme</li>
+                <li>Raw water: 0.92 m³/s for Sorong City expansion</li>
+                <li>Micro hydro potential: 1.2 MW (ancillary benefit)</li>
+                <li>Flood reduction: 45% decrease in peak flow</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="conclusion">
+        <span style="font-size: 1.5rem;">✅</span> <strong>Conclusion:</strong> The Warsamson Dam project is <strong>technically feasible, economically viable, and financially sustainable</strong>. With positive ENPV, EIRR above discount rate, and acceptable sensitivity indicators, the dam presents a strong case for development in West Papua.
+    </div>
+
+    <div class="footnote">
+        Source: Calculation of Economic & Financial Analysis (EFA), 2022 – Warsamson Dam ESP. <br>
+        All monetary values in IDR million, constant prices. O&M includes routine (2.5% civil works) and periodic (7.5% every 5 years).
+    </div>
+</div>
+</body>
+</html>

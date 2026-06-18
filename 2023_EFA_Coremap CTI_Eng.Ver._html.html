@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Portfolio Summary | COREMAP-CTI – Economic & Financial Analysis</title>
+    <!-- Google Fonts + Font Awesome 6 (free icons) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #eef7f2 0%, #d9e9e2 100%);
+            font-family: 'Inter', sans-serif;
+            padding: 48px 32px;
+            color: #1a2f3a;
+        }
+
+        /* main container – elegant card */
+        .summary-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        /* hero header */
+        .hero {
+            background: linear-gradient(112deg, #0C4A5E 0%, #1F7A8C 100%);
+            padding: 2.2rem 2.8rem;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.3rem;
+        }
+        .hero-tag {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        .hero-tag span i {
+            margin-right: 6px;
+        }
+
+        /* grid layout */
+        .grid-dashboard {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem;
+            padding: 2.2rem 2.5rem;
+        }
+
+        /* cards inside */
+        .stat-card {
+            background: #F9FEFB;
+            border-radius: 1.5rem;
+            padding: 1.4rem 1.5rem;
+            border: 1px solid #e0efe9;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -12px rgba(0,0,0,0.1);
+        }
+        .card-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #0F5A6E;
+            border-left: 4px solid #1F7A8C;
+            padding-left: 12px;
+        }
+        .kpi-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 0.8rem 0;
+        }
+        .kpi {
+            background: white;
+            border-radius: 1.2rem;
+            padding: 0.6rem 1rem;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            border: 1px solid #dceee7;
+        }
+        .kpi-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1F7A8C;
+            line-height: 1.2;
+        }
+        .kpi-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #4f7a8a;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .impact-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .impact-item {
+            background: #F0F6F2;
+            border-radius: 1rem;
+            padding: 0.6rem 1rem;
+            flex: 1 1 180px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+        .impact-item i {
+            font-size: 1.3rem;
+            color: #1F7A8C;
+        }
+
+        .eirr-badge {
+            background: #EFF8FC;
+            border-radius: 1rem;
+            padding: 0.8rem 1.2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        .comparison {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: space-between;
+            margin: 1rem 0;
+        }
+        .comp-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 0.8rem;
+            text-align: center;
+            flex: 1;
+        }
+
+        @media (max-width: 860px) {
+            .grid-dashboard {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            body {
+                padding: 20px;
+            }
+        }
+        .footer-note {
+            background: #F5F9F7;
+            padding: 1rem 2.5rem;
+            font-size: 0.7rem;
+            color: #4c6e7c;
+            text-align: center;
+            border-top: 1px solid #d4e2dc;
+        }
+        .highlight {
+            color: #0F5A6E;
+            font-weight: 700;
+        }
+        hr {
+            margin: 0.6rem 0;
+            border: 0;
+            height: 1px;
+            background: #d4e2dc;
+        }
+    </style>
+</head>
+<body>
+<div class="summary-container">
+    <!-- Hero section -->
+    <div class="hero">
+        <h1><i class="fas fa-chart-line"></i> COREMAP-CTI · Economic & Financial Analysis</h1>
+        <p style="font-size: 1rem; margin-top: 8px; max-width: 85%;">Coral Reef Rehabilitation and Management Program – Coral Triangle Initiative (Indonesia, 2014–2023)<br>ADB Loan 3094-INO | GEF Grant 0379-INO</p>
+        <div class="hero-tag">
+            <span><i class="fas fa-calendar-alt"></i> Completion: 2023</span>
+            <span><i class="fas fa-map-marker-alt"></i> 12 MPAs (9 KKPD + 3 KKPN)</span>
+            <span><i class="fas fa-chart-pie"></i> TEV · CBA · EIRR + Sensitivity</span>
+        </div>
+    </div>
+
+    <!-- DASHBOARD / MAIN CONTENT -->
+    <div class="grid-dashboard">
+        
+        <!-- LEFT: BACKGROUND & URGENCY -->
+        <div class="stat-card">
+            <div class="card-title"><i class="fas fa-water"></i> Background & Urgency</div>
+            <p style="font-size: 0.85rem; margin-bottom: 12px;">Indonesia holds 18% of world’s coral reefs but <strong>~70% are threatened</strong> by destructive fishing, pollution, and climate pressures. High coastal poverty and limited MPA financing required an integrated solution.</p>
+            <div class="kpi-row">
+                <div class="kpi"><div class="kpi-number">32.5M ha</div><div class="kpi-label">national MPA target by 2030</div></div>
+                <div class="kpi"><div class="kpi-number">70%</div><div class="kpi-label">coral reefs degraded (baseline)</div></div>
+            </div>
+            <div class="impact-item" style="margin-top: 5px;"><i class="fas fa-chart-line"></i> <span>Urgent need: effective management + sustainable livelihoods + innovative finance (PES).</span></div>
+        </div>
+
+        <!-- RIGHT: SCOPE & PHASES -->
+        <div class="stat-card">
+            <div class="card-title"><i class="fas fa-map-marked-alt"></i> Project Scope</div>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+                <div style="background:#EFF8FC; border-radius: 1rem; padding: 8px 12px; flex:1;"><i class="fas fa-ship"></i> <strong>Phase 1 (2014–2018)</strong><br>MMAF · 10 MPAs (Sumatra & Kepri)</div>
+                <div style="background:#EFF8FC; border-radius: 1rem; padding: 8px 12px; flex:1;"><i class="fas fa-tree"></i> <strong>Phase 2 (2019–2023)</strong><br>Bappenas/ICCTF · 3 priority MPAs: Nusa Penida, Gili Matra, Gili Balu</div>
+            </div>
+            <p style="font-size: 0.8rem;"><i class="fas fa-check-circle" style="color:#1F7A8C;"></i> Restructured focus to accelerate management effectiveness, PES schemes, and community-based enterprises.</p>
+        </div>
+
+        <!-- OUTCOME & INDICATORS -->
+        <div class="stat-card full-width">
+            <div class="card-title"><i class="fas fa-bullseye"></i> Outcome & Key Achievements (Completion 2023)</div>
+            <div class="kpi-row">
+                <div class="kpi"><div class="kpi-number">3</div><div class="kpi-label">MPAs at <strong>Silver (Optimum)</strong> level</div></div>
+                <div class="kpi"><div class="kpi-number">60</div><div class="kpi-label">regulations issued</div></div>
+                <div class="kpi"><div class="kpi-number">68</div><div class="kpi-label">eco-friendly infrastructures</div></div>
+                <div class="kpi"><div class="kpi-number">543</div><div class="kpi-label">women in livelihood support (67%)</div></div>
+            </div>
+            <div class="impact-list">
+                <div class="impact-item"><i class="fas fa-seedling"></i> 20,000+ mangrove seedlings</div>
+                <div class="impact-item"><i class="fas fa-fish"></i> 550,400 m² coral restored (Gili Matra)</div>
+                <div class="impact-item"><i class="fas fa-hand-holding-usd"></i> PES adopted (Nusa Penida & Gili Matra)</div>
+                <div class="impact-item"><i class="fas fa-industry"></i> 22 community enterprises + FIRR >27%</div>
+            </div>
+        </div>
+
+        <!-- ECONOMIC VIABILITY (EIRR & SENSITIVITY) -->
+        <div class="stat-card">
+            <div class="card-title"><i class="fas fa-chart-line"></i> Economic Viability · EIRR & ENPV</div>
+            <div class="kpi-row">
+                <div class="kpi"><div class="kpi-number">17.98%</div><div class="kpi-label">EIRR (optimal BV18+EV22)</div></div>
+                <div class="kpi"><div class="kpi-number">USD 109.6M</div><div class="kpi-label">ENPV (positive)</div></div>
+                <div class="kpi"><div class="kpi-number">9%</div><div class="kpi-label">Social Discount Rate (SDR)</div></div>
+            </div>
+            <p style="font-size: 0.8rem; margin-top: 6px;"><strong>Sensitivity analysis (+10% investment / +10% O&M)</strong> → EIRR remains above 16% in all scenarios, proving project resilience. Switching value (SV) for investment: -1.11.</p>
+            <div class="eirr-badge" style="margin-top: 12px;">
+                <i class="fas fa-chart-simple"></i> Optimal combination: <strong>BV 18% + EV 22%</strong> (Existence Value dominant) delivers highest return & robustness.
+            </div>
+        </div>
+
+        <!-- GENDER & LIVELIHOOD IMPACT -->
+        <div class="stat-card">
+            <div class="card-title"><i class="fas fa-venus-mars"></i> Gender & Social Inclusion</div>
+            <div class="kpi-row">
+                <div class="kpi"><div class="kpi-number">67%</div><div class="kpi-label">women in livelihood assistance</div></div>
+                <div class="kpi"><div class="kpi-number">33%</div><div class="kpi-label">women in conservation training</div></div>
+                <div class="kpi"><div class="kpi-number">43%</div><div class="kpi-label">women in species management groups</div></div>
+            </div>
+            <p><i class="fas fa-chart-line"></i> <strong>Exceeded GAP targets</strong> – Women’s active role in ecotourism, fish processing, and surveillance groups enhanced sustainability.</p>
+            <hr>
+            <div><i class="fas fa-store"></i> <strong>Microenterprise success:</strong> Gili Balu Fish Producers Association (APGB) → revenue IDR 269M/year, FIRR 29.8%.</div>
+        </div>
+
+        <!-- LESSONS LEARNED + POLICY BRIEF SNAPSHOT -->
+        <div class="stat-card full-width">
+            <div class="card-title"><i class="fas fa-graduation-cap"></i> Lessons Learned & Policy Recommendations</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                <div style="flex: 1;">
+                    <i class="fas fa-lightbulb"></i> <strong>Key lessons</strong>
+                    <ul style="margin-left: 1.2rem; margin-top: 6px;">
+                        <li>Existence value (EV) drives economic returns – rare species matter for EIRR.</li>
+                        <li>PES and blue carbon are viable financing instruments for MPAs.</li>
+                        <li>Long-term O&M budget sensitivity > investment cost sensitivity.</li>
+                        <li>Gender inclusion amplifies project effectiveness and ownership.</li>
+                    </ul>
+                </div>
+                <div style="flex: 1;">
+                    <i class="fas fa-landmark"></i> <strong>Policy brief takeaways</strong>
+                    <ul style="margin-left: 1.2rem; margin-top: 6px;">
+                        <li>Scale PES nationwide & integrate carbon credits.</li>
+                        <li>Mandate non-use value (EV ≥ 18%) in economic appraisal of MPAs.</li>
+                        <li>Allocate dedicated O&M budgets + technology (IoT/drones).</li>
+                        <li>Replicate community-based enterprises with digital market access.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="impact-item" style="margin-top: 12px; background:#E6F4F0;">
+                <i class="fas fa-chart-line"></i> <strong>Policy impact:</strong> COREMAP-CTI provides a replicable model for achieving SDG 14, low-carbon development, and sustainable blue economy.
+            </div>
+        </div>
+
+        <!-- COMPARISON TABLE: APPRAISAL vs COMPLETION -->
+        <div class="stat-card full-width">
+            <div class="card-title"><i class="fas fa-arrow-trend-up"></i> EIRR Comparison: At Appraisal (2013) vs At Completion (2023)</div>
+            <div class="comparison">
+                <div class="comp-card"><strong>At Appraisal</strong><br><span style="font-size: 1.3rem; font-weight:800;">15.3%</span> <span style="font-size:0.7rem;">(Anambas)</span><br><span style="font-size: 1.3rem; font-weight:800;">42.1%</span> <span style="font-size:0.7rem;">(Bintan)</span><br>SDR 12%</div>
+                <div class="comp-card" style="background:#E9F3EF;"><strong>At Completion (12 MPAs)</strong><br><span style="font-size: 1.8rem; font-weight:800; color:#1F7A8C;">17.98%</span><br>Optimal BV18+EV22<br>ENPV +USD 109.6M<br>SDR 9%</div>
+                <div class="comp-card"><strong>Resilience</strong><br><i class="fas fa-shield-alt"></i> +10% cost overrun<br>EIRR still >16%</div>
+            </div>
+            <p style="font-size: 0.75rem; text-align: center;">The decline from the midpoint (28.7%) is due to restructuring & COVID delays, yet final EIRR remains highly efficient (>17%).</p>
+        </div>
+
+        <!-- KEY FINANCIAL METRICS SUMMARY -->
+        <div class="stat-card">
+            <div class="card-title"><i class="fas fa-coins"></i> Investment & Financial Efficiency</div>
+            <div class="kpi-row">
+                <div class="kpi"><div class="kpi-number">USD 19.58M</div><div class="kpi-label">Total disbursed (actual)</div></div>
+                <div class="kpi"><div class="kpi-number">>27%</div><div class="kpi-label">FIRR representative microenterprises</div></div>
+            </div>
+            <div><i class="fas fa-chart-pie"></i> <strong>Economic conversion:</strong> taxes removed (VAT 11%), shadow exchange rate (SERF=1.01), shadow wage (SWF=0.76).</div>
+            <hr>
+            <div><i class="fas fa-water"></i> <strong>Breakwater value (indirect use):</strong> USD 398M (incremental) over 20 years. Carbon sink value also contributes significantly to TEV.</div>
+        </div>
+
+        <!-- BLUE ECONOMY & FUTURE OUTLOOK -->
+        <div class="stat-card">
+            <div class="card-title"><i class="fas fa-globe-asia"></i> Blue Economy & Replication Potential</div>
+            <p>COREMAP-CTI demonstrates that <strong>integrated MPA management + PES + women-led enterprises</strong> can deliver sustained environmental and economic returns. The framework is ready for national scaling under Indonesia’s 32.5M ha MPA roadmap and Coral Triangle Initiative.</p>
+            <div style="background:#F0F6F2; border-radius: 1rem; padding: 0.8rem; margin-top: 12px;">
+                <i class="fas fa-chart-line"></i> <strong>Potential impact if replicated:</strong> Mobilize USD 2B+ in blue carbon credits & ecotourism revenues by 2030.
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER: SOURCES & CREDENTIALS -->
+    <div class="footer-note">
+        <i class="fas fa-file-alt"></i> Source: ADB Project Completion Report (2025), Detailed EFA COREMAP-CTI, GEF Terminal Evaluation, Bappenas (2023), field assessments July–August 2023.<br>
+        Analysis based on TEV (Use + Non-Use Value), 20-year economic life, SDR 9%, with sensitivity tests (investment & O&M +10%). All figures reflect completion status as of December 2023.
+        <br><br>
+        <span><i class="fas fa-chart-line"></i> #CoralTriangle #EconomicAnalysis #MPA #BlueEconomy #SustainableFinance #EIRR</span>
+    </div>
+</div>
+</body>
+</html>

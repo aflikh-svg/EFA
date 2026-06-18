@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VE Summary Report | Caraulun River Project | EN + ID</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #eef2f5;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 40px 24px;
+            color: #1e2a3a;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        /* header / cover style */
+        .cover {
+            background: linear-gradient(135deg, #0b2b3b 0%, #1c5a6a 100%);
+            padding: 2rem 2.5rem;
+            color: white;
+        }
+        .cover h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            border-left: 5px solid #f4c542;
+            padding-left: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        .cover h2 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-top: 0.5rem;
+        }
+        .badge-date {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+        /* tab navigation */
+        .lang-tabs {
+            display: flex;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            padding-left: 2rem;
+        }
+        .tab-btn {
+            background: transparent;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 1.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #2c3e50;
+            border-bottom: 3px solid transparent;
+        }
+        .tab-btn.active {
+            color: #1c5a6a;
+            border-bottom-color: #1c5a6a;
+            background: #ffffff;
+        }
+        .tab-btn:hover:not(.active) {
+            background: #eef2f5;
+            color: #0f3b44;
+        }
+        .lang-content {
+            display: none;
+            padding: 2rem 2rem 2.5rem 2rem;
+            background: white;
+            animation: fade 0.25s ease;
+        }
+        .lang-content.active {
+            display: block;
+        }
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(6px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* typography */
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 1.2rem 0 0.8rem 0;
+            color: #0b2b3b;
+            border-left: 4px solid #f4c542;
+            padding-left: 1rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem 0 0.4rem 0;
+            color: #1e4a5f;
+        }
+        .highlight {
+            background: #fef9e6;
+            border-left: 4px solid #f4c542;
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .card {
+            background: #f9fbfd;
+            border-radius: 24px;
+            padding: 1.2rem 1.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e9edf2;
+        }
+        .card p {
+            margin: 0.5rem 0;
+        }
+        .rec-box {
+            background: #e9f4f0;
+            border-radius: 24px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0;
+            border: 1px solid #cbdcd9;
+        }
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.2rem 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        th {
+            background: #e6f0f3;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .footnote {
+            font-size: 0.8rem;
+            color: #4a627a;
+            margin-top: 1.8rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1rem;
+        }
+        @media (max-width: 680px) {
+            .cover h1 { font-size: 1.5rem; }
+            .lang-tabs { padding-left: 1rem; }
+            .tab-btn { padding: 0.75rem 1rem; }
+            .lang-content { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="cover">
+        <h1>📋 Preliminary Value Engineering Report</h1>
+        <h2>Caraulun River Water Resources Development Scheme, Manufahi, Timor-Leste</h2>
+        <div class="badge-date">Feasibility Study · Dec 2025 · Executive Summary (VE Synthesis)</div>
+    </div>
+
+    <div class="lang-tabs">
+        <button class="tab-btn active" id="tab-en">🇬🇧 English Summary</button>
+        <button class="tab-btn" id="tab-id">🇮🇩 Ringkasan Bahasa Indonesia</button>
+    </div>
+
+    <!-- ENGLISH VERSION -->
+    <div id="content-en" class="lang-content active">
+        <h3>🔍 1. Background & Objectives</h3>
+        <p>The Caraulun River Basin faces extreme seasonal water paradox: >2,000 mm/year rainfall but dry season discharge below 1 m³/s (Q80). Existing irrigation serves <30% of potential land (>3,500 ha). This VE report aims to optimize function, cost, and sustainability for government decision-making, focusing on scenario S3 (multipurpose dam) while comparing S0–S3 alternatives.</p>
+        
+        <div class="highlight">
+            <strong>🎯 Main VE objectives:</strong> analyze basic functions, compare technical/social/environmental criteria, identify innovations (design, materials, O&M), and provide measurable recommendations.
+        </div>
+
+        <h3>📐 2. Methodology (SAVE International Job Plan)</h3>
+        <p>6-phase structured approach: Information Gathering → Function Analysis (FAST & cost-function) → Creative (brainstorming 18+ ideas) → Evaluation → Development → Presentation. Life-cycle cost, risk-based assessment, and multidisciplinary team (17 specialists).</p>
+        
+        <h3>💡 3. Creative Ideas & Screening</h3>
+        <div class="grid-2">
+            <div class="card"><strong>🌊 For all scenarios:</strong> smart water metering, precision agriculture, results-based conservation incentives, farmer water user associations (WUA).</div>
+            <div class="card"><strong>🏗️ S3 optimization:</strong> Dam height/geometry optimization, “design for deconstruction”, e-flow for environmental health, livelihood restoration scheme, indigenous co-management (Tara Bandu).</div>
+        </div>
+        <p><strong>✔️ Top high-priority ideas selected:</strong> Small reservoir cascade (S2), Results-Based Conservation, Dam optimization (type & height), Proactive Livelihood Restoration.</p>
+        
+        <h3>⚖️ 4. Evaluation: Dam Location & Type Comparison</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Parameter</th><th>Sui Dam Case-2</th><th>Sui Dam Case-3 ✅ (Recommended)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Height / Crest elev.</td><td>24 m / EL +52 m</td><td>31 m / EL +59 m</td></tr>
+                    <tr><td>Total cost (after tax)</td><td>USD 61.0 M</td><td>USD 63.95 M</td></tr>
+                    <tr><td>Storage capacity</td><td>Sufficient</td><td>Largest (excellent for long-term)</td></tr>
+                    <tr><td>Weighted score (multicriteria)</td><td>~3.74</td><td><strong>4.74 (superior)</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>🏆 Dam type recommendation:</strong> <strong>Rockfill Dam</strong> – best seismic resistance, lowest cost, uses local materials, suitable for topography and foundation conditions of Caraulun (vs concrete/CFRD).</p>
+        
+        <h3>📦 5. Alternative Packages (A, B, C)</h3>
+        <ul>
+            <li><strong>Package A (Cascade system – S2 evolved):</strong> Moderate CAPEX (USD 85-105M), irrigation ~2,200 ha, low social impact, good balance.</li>
+            <li><strong>Package B (Optimized Sui Dam – S3):</strong> CAPEX USD 100-115M, irrigation 2,800-3,000 ha, max flood control, highest value if socio-environmental risks managed.</li>
+            <li><strong>Package C (Rehabilitation + conservation):</strong> USD 25-40M, limited reliability, quick-win but does not solve storage.</li>
+        </ul>
+        <div class="rec-box">
+            <strong>✅ MAIN RECOMMENDATION (VE TEAM):</strong> Adopt <strong>Package B – “Optimized & Responsible Sui Dam”</strong> with specifications:<br>
+            ▪ Location: Sui Dam Case-3<br>
+            ▪ Dam type: Rockfill Dam<br>
+            ▪ Mandatory integrated plans: Social Management (livelihood restoration) + Environmental Management (e-flow, MPA monitoring).
+        </div>
+        
+        <h3>📋 Project Delivery Options (preliminary view)</h3>
+        <p>Based on the VE analysis, <strong>Design-Build/Turnkey</strong> offers cost certainty and faster delivery for Package B. BOT/PPP could be considered for the micro-hydro component to attract private financing.</p>
+        
+        <h3>📅 Next Steps & Integration</h3>
+        <p>Jan–Feb 2026: Detailed geotechnical investigation at Case-3, finalize social census. Mar: Rockfill conceptual design. Apr: ESIA & management plans. May–Jun: Updated financial analysis + final FS report integrating VE recommendations.</p>
+        
+        <div class="footnote">
+            <strong>Value Equation: VALUE = FUNCTION / COST</strong> — This VE process demonstrates that Case-3 Rockfill dam delivers highest long-term benefits (irrigation, flood control, hydropower, water security) with manageable risk, providing optimal value for Timor-Leste.
+        </div>
+    </div>
+
+    <!-- INDONESIAN VERSION -->
+    <div id="content-id" class="lang-content">
+        <h3>🔍 1. Latar Belakang & Tujuan</h3>
+        <p>DAS Caraulun mengalami paradoks air ekstrem: curah hujan >2.000 mm/tahun namun debit musim kemarau (Q80) <1 m³/dtk. Irigasi eksisting melayani <30% lahan potensial (>3.500 ha). Laporan VE ini bertujuan mengoptimalkan fungsi, biaya, dan keberlanjutan untuk pengambilan keputusan pemerintah, dengan fokus pada skenario S3 (dam serbaguna) serta pembanding S0–S3.</p>
+        <div class="highlight">
+            <strong>🎯 Tujuan utama VE:</strong> menganalisis fungsi dasar, membandingkan kriteria teknis/sosial/lingkungan, identifikasi inovasi (desain, material, operasi), dan rekomendasi terukur.
+        </div>
+        
+        <h3>📐 2. Metodologi (SAVE International Job Plan)</h3>
+        <p>6 fase terstruktur: Pengumpulan Informasi → Analisis Fungsi (FAST & biaya-fungsi) → Kreatif (brainstorming 18+ ide) → Evaluasi → Pengembangan → Presentasi. Mempertimbangkan biaya siklus hidup, analisis risiko, tim multidisiplin (17 ahli).</p>
+        
+        <h3>💡 3. Ide Kreatif & Penyaringan</h3>
+        <div class="grid-2">
+            <div class="card"><strong>🌊 Untuk semua skenario:</strong> pengukuran air pintar, pertanian presisi, insentif konservasi berbasis hasil, P3A (perkumpulan petani pemakai air).</div>
+            <div class="card"><strong>🏗️ Optimasi S3:</strong> optimalisasi tinggi/geometri dam, “design for deconstruction”, e-flow ekosistem sungai, skema pemulihan mata pencaharian, tata kelola bersama masyarakat adat (Tara Bandu).</div>
+        </div>
+        <p><strong>✔️ Ide prioritas tinggi:</strong> sistem kaskade waduk kecil (S2), konservasi berbasis insentif, optimasi tipe & tinggi dam, restorasi mata pencaharian proaktif.</p>
+        
+        <h3>⚖️ 4. Evaluasi: Lokasi & Tipe Bendungan</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Parameter</th><th>Sui Dam Kasus-2</th><th>Sui Dam Kasus-3 ✅ (Direkomendasikan)</th></tr></thead>
+                <tbody>
+                    <tr><td>Tinggi / Elevasi puncak</td><td>24 m / EL +52 m</td><td>31 m / EL +59 m</td></tr>
+                    <tr><td>Total biaya (setelah pajak)</td><td>USD 61,0 Juta</td><td>USD 63,95 Juta</td></tr>
+                    <tr><td>Kapasitas tampungan</td><td>Cukup</td><td>Terbesar (unggul untuk jangka panjang)</td></tr>
+                    <tr><td>Skor tertimbang (multikriteria)</td><td>~3,74</td><td><strong>4,74 (superior)</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>🏆 Rekomendasi tipe bendungan:</strong> <strong>Rockfill Dam (Urugan Batu)</strong> – ketahanan seismik terbaik, biaya terendah, memanfaatkan material lokal, sesuai dengan topografi dan fondasi di Caraulun (dibanding beton/CFRD).</p>
+        
+        <h3>📦 5. Paket Alternatif (A, B, C)</h3>
+        <ul>
+            <li><strong>Paket A (Sistem kaskade – pengembangan S2):</strong> CAPEX sedang (USD 85-105 M), irigasi ~2.200 ha, dampak sosial rendah, keseimbangan baik.</li>
+            <li><strong>Paket B (Bendungan Sui Dioptimalkan – S3):</strong> CAPEX USD 100-115 M, irigasi 2.800-3.000 ha, pengendalian banjir maksimal, nilai tertinggi jika risiko sosial-lingkungan dikelola.</li>
+            <li><strong>Paket C (Rehabilitasi + konservasi):</strong> USD 25-40 M, keandalan terbatas, solusi cepat namun tidak menyelesaikan masalah tampungan.</li>
+        </ul>
+        <div class="rec-box">
+            <strong>✅ REKOMENDASI UTAMA (TIM VE):</strong> Mengadopsi <strong>Paket B – “Bendungan Sui yang Dioptimalkan & Bertanggung Jawab”</strong> dengan spesifikasi:<br>
+            ▪ Lokasi: Sui Dam Kasus-3<br>
+            ▪ Tipe bendungan: Rockfill Dam (Urugan Batu)<br>
+            ▪ Paket terintegrasi wajib: Rencana Pengelolaan Sosial (restorasi mata pencaharian) + Pengelolaan Lingkungan (e-flow, monitoring MPA Manufahi).
+        </div>
+        
+        <h3>📋 Opsi Penyerahan Proyek (tinjauan awal)</h3>
+        <p>Berdasarkan analisis VE, <strong>Design-Build/Turnkey</strong> memberikan kepastian biaya dan percepatan konstruksi untuk Paket B. Skema BOT/KPS dapat dipertimbangkan untuk komponen PLTMH guna menarik investasi swasta.</p>
+        
+        <h3>📅 Langkah Lanjutan & Integrasi</h3>
+        <p>Jan–Feb 2026: Investigasi geoteknik detail di Kasus-3, finalisasi data sosial. Mar: Desain konseptual rockfill. Apr: Penyusunan ESIA & rencana pengelolaan. Mei–Jun: Analisis keuangan terbaru + laporan FS akhir yang mengintegrasikan rekomendasi VE.</p>
+        
+        <div class="footnote">
+            <strong>Persamaan Nilai: VALUE = FUNGSI / BIAYA</strong> — Proses VE ini membuktikan bahwa Bendungan Kasus-3 tipe Rockfill memberikan manfaat jangka panjang tertinggi (irigasi, pengendalian banjir, tenaga air, ketahanan air) dengan risiko yang terkelola, memberikan nilai optimal untuk Timor-Leste.
+        </div>
+    </div>
+</div>
+
+<script>
+    const tabEn = document.getElementById('tab-en');
+    const tabId = document.getElementById('tab-id');
+    const contentEn = document.getElementById('content-en');
+    const contentId = document.getElementById('content-id');
+    
+    function setActive(lang) {
+        if(lang === 'en') {
+            tabEn.classList.add('active');
+            tabId.classList.remove('active');
+            contentEn.classList.add('active');
+            contentId.classList.remove('active');
+        } else {
+            tabId.classList.add('active');
+            tabEn.classList.remove('active');
+            contentId.classList.add('active');
+            contentEn.classList.remove('active');
+        }
+    }
+    
+    tabEn.addEventListener('click', () => setActive('en'));
+    tabId.addEventListener('click', () => setActive('id'));
+</script>
+</body>
+</html>
